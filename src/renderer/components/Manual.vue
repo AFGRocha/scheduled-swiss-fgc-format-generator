@@ -148,15 +148,17 @@ const generateDraw = () => {
   flex-wrap: wrap;
   gap: 16px;
   margin: 0 auto;
+  padding: 24px 0;
 }
 
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid #404040;
   border-radius: 8px;
   padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   flex: 1 1 300px;
   min-width: 300px;
+  background-color: #1a1a1a;
 }
 
 .card-header {
@@ -168,18 +170,19 @@ const generateDraw = () => {
 
 .card-header h3 {
   margin: 0;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .remove-button {
-  background-color: #ff4444;
-  color: white;
-  border: none;
+  background-color: #5a3a3a;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #8a5a5a;
   border-radius: 4px;
   width: 28px;
   height: 28px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
   padding: 0;
   display: flex;
   align-items: center;
@@ -187,7 +190,8 @@ const generateDraw = () => {
 }
 
 .remove-button:hover {
-  background-color: #cc0000;
+  background-color: #6a4a4a;
+  border-color: #a07070;
 }
 
 .input-group {
@@ -199,30 +203,33 @@ const generateDraw = () => {
 .input-group input {
   flex: 1;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #404040;
   border-radius: 4px;
   font-size: 14px;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .input-group input:focus {
   outline: none;
   border-color: #0066cc;
-  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
 }
 
 .add-player-button {
   padding: 8px 12px;
-  background-color: #0066cc;
-  color: white;
-  border: none;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .add-player-button:hover {
-  background-color: #0052a3;
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 
 .player-list {
@@ -248,6 +255,7 @@ const generateDraw = () => {
 .player-name {
   font-size: 14px;
   word-break: break-word;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .action-buttons {
@@ -259,28 +267,31 @@ const generateDraw = () => {
 .delete-button {
   padding: 4px 8px;
   font-size: 12px;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .edit-button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
 }
 
 .edit-button:hover {
-  background-color: #45a049;
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 
 .delete-button {
-  background-color: #ff4444;
-  color: white;
+  background-color: #5a3a3a;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #8a5a5a;
 }
 
 .delete-button:hover {
-  background-color: #cc0000;
+  background-color: #6a4a4a;
+  border-color: #a07070;
 }
 
 .edit-mode {
@@ -292,63 +303,70 @@ const generateDraw = () => {
 .edit-input {
   flex: 1;
   padding: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid #404040;
   border-radius: 4px;
   font-size: 14px;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .edit-input:focus {
   outline: none;
   border-color: #0066cc;
-  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
 }
 
 .save-button,
 .cancel-button {
   padding: 4px 8px;
   font-size: 12px;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .save-button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
 }
 
 .save-button:hover {
-  background-color: #45a049;
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 
 .cancel-button {
-  background-color: #999;
-  color: white;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
 }
 
 .cancel-button:hover {
-  background-color: #777;
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 
 .add-button {
   padding: 10px 16px;
-  background-color: #0066cc;
-  color: white;
-  border: none;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s;
-  height: fit-content;
+  transition: background-color 0.2s, border-color 0.2s;
+  align-self: stretch;
 }
 
 .add-button:hover {
-  background-color: #0052a3;
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 
 .results-container {
-  margin-top: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
   padding: 24px;
   border: 1px solid #404040;
   border-radius: 8px;
@@ -378,68 +396,27 @@ const generateDraw = () => {
   justify-content: center;
 }
 
-.matchday-label {
-  background-color: #0066cc;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  min-width: 90px;
-  display: none;
-}
-
-.match-details {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.player-name {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.player-name.home {
-  background-color: #2a6a2a;
-  color: #8cff8c;
-}
-
-.player-name.away {
-  background-color: #6a2a2a;
-  color: #ff8c8c;
-}
-
 .vs {
   font-size: 12px;
-  color: #999;
+  color: #888;
   font-weight: 600;
-}
-
-.match-location {
-  font-size: 12px;
-  color: #999;
-  min-width: 150px;
-  text-align: right;
-  display: none;
 }
 
 .generate-button {
   padding: 12px 24px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s;
   font-weight: 500;
+  margin: 24px 0;
 }
 
 .generate-button:hover {
-  background-color: #45a049;
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 </style>

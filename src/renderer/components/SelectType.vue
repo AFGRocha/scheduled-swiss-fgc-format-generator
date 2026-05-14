@@ -17,7 +17,7 @@ const handleButtonClick = (button: string) => {
 </script>
 
 <template>
-  <h1>a</h1>
+  <h1>Untitled Champions League FGC Format Generator</h1>
   <div class="button-container">
     <button @click="handleButtonClick('import-startgg')">Import from Start.gg</button>
     <button @click="handleButtonClick('manual')">Manual</button>
@@ -29,5 +29,23 @@ const handleButtonClick = (button: string) => {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  padding: 48px 24px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #505050;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid #606060;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #5a5a5a;
+  border-color: #7a7a7a;
 }
 </style>
