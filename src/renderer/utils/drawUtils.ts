@@ -27,12 +27,8 @@ function shuffle<T>(array: T[]): T[] {
  * and no duplicate pairings occur.
  */
 function drawSamePot(pot: Pot): Match[] {
-  if (pot.length < 2) {
-    throw new Error("A pot must have at least 2 players to draw within itself.");
-  }
-  
-  if (pot.length % 2 !== 0) {
-    throw new Error("Same-pot draws require an even number of players to avoid someone being left out.");
+  if (pot.length % 2 !== 0 || pot.length < 2) {
+    pot.push({ id: `BYE${pot[0]?.potId}`, name: `BYE${pot[0]?.potId}`, potId: pot[0]?.potId || 'unknown' });
   }
 
   const matches: Match[] = [];

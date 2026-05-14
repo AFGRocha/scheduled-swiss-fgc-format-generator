@@ -83,7 +83,7 @@ const generateDraw = () => {
     showResults.value = true;
   } catch (error) {
     console.error("Error generating draw:", error);
-    alert("Error generating draw. Please check your pots have players.");
+    alert("Error generating draw. " + error );
   }
 };
 </script>
