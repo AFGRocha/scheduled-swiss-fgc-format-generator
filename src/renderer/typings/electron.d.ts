@@ -2,7 +2,13 @@
  * Should match main/preload.ts for typescript support in renderer
  */
 export default interface ElectronApi {
-  sendMessage: (message: string) => void
+  getSeededAttendees: (eventSlug: string) => Promise<{
+    eventName: string;
+    attendees: Array<{
+      name: string;
+      seed: number | null;
+    }>;
+  }>
 }
 
 declare global {

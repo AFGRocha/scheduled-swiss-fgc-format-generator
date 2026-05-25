@@ -1,5 +1,5 @@
 import {contextBridge, ipcRenderer} from 'electron';
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  sendMessage: (message: string) => ipcRenderer.send('message', message)
+  getSeededAttendees: (eventSlug: string) => ipcRenderer.invoke('startgg:get-seeded-attendees', eventSlug)
 })

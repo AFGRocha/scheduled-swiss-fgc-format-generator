@@ -4,8 +4,8 @@ import vueLogo from './assets/vue.svg';
 
 import SelectType from './components/SelectType.vue'
 import Manual from './components/Manual.vue';
+import Import from './components/Import.vue';
 import { ref } from 'vue';
-window.electronAPI.sendMessage('Hello from App.vue!');
 
 const showManual = ref(false);
 const showImport = ref(false);
@@ -21,6 +21,7 @@ const handleButtonClick = (button: string) => {
 
   <div>
     <Manual v-if="showManual" />
+    <Import v-if="showImport" />
   </div>
 </template>
 
