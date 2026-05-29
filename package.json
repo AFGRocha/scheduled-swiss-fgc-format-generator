@@ -1,6 +1,6 @@
 {
   "name": "scheduled-swiss-fgc-format-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scheduled Swiss FGC Format Generator",
   "main": "main/main.js",
   "scripts": {

@@ -27,19 +27,22 @@ function shuffle<T>(array: T[]): T[] {
  * and no duplicate pairings occur.
  */
 function drawSamePot(pot: Pot): Match[] {
-  if (pot.length % 2 !== 0 || pot.length < 2) {
-    pot.push({ id: `BYE${pot[0]?.potId}`, name: `BYE${pot[0]?.potId}`, potId: pot[0]?.potId || 'unknown' });
-  }
-
   const matches: Match[] = [];
   const shuffled = shuffle(pot);
 
   // Pair them up sequentially after a random shuffle
   for (let i = 0; i < shuffled.length; i += 2) {
+    if(shuffled[i + 1]) {
     matches.push({
       player1: shuffled[i],
       player2: shuffled[i + 1]
     });
+    } else {
+      matches.push({
+        player1: shuffled[i],
+        player2: { id: 'BYE', name: 'BYE (Odd Numbered Pot)', potId: shuffled[i].potId }
+      });
+    }
   }
 
   return matches;
@@ -73,6 +76,22 @@ function drawDifferentPots(potA: Pot, potB: Pot): Match[] {
 export function simulateDraw(pots: Record<string, Pot>): Match[] {
   const allMatches: Match[] = [];
   const potIds = Object.keys(pots);
+
+  let byeCounter = 1;
+  while (!potIds.every((potId) => pots[potId].length === pots[potIds[0]].length)) {
+    const minLength = Math.min(...potIds.map((potId) => pots[potId].length));
+
+    for (const potId of potIds) {
+      if (pots[potId].length === minLength) {
+        pots[potId].push({
+          id: `BYE-${potId}-${byeCounter++}`,
+          name: 'BYE',
+          potId
+        });
+      }
+    }
+  }
+
 
   // Draw within the same pots
   for (const potId of potIds) {
