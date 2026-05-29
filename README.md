@@ -4,8 +4,10 @@ This generator creates matches in the "Scheduled Swiss" format manually or using
 
 This format is an alternate way of playing more matches at a tournament while trying to circumvent the wait times of standard Swiss.
 
+You can manually create pots or import attendees directly from a start.gg event, when importing from start.gg the pots are evenly divided based of the seeding of the event.
+
 Things to add:
-- Had the ability to play more than one match per pot
+- Add the ability to play more than one match per pot
 - Export matches directly to start.gg
 
 ## How to setup dev environment
