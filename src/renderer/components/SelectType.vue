@@ -17,7 +17,7 @@ const handleButtonClick = (button: string) => {
 </script>
 
 <template>
-  <h1>Untitled Champions League FGC Format Generator</h1>
+  <h1>Scheduled Swiss FGC Format Generator</h1>
   <div class="button-container">
     <button @click="handleButtonClick('import-startgg')">Import from Start.gg</button>
     <button @click="handleButtonClick('manual')">Manual</button>

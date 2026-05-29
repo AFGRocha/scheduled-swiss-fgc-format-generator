@@ -28,6 +28,8 @@ function createWindow () {
 
 app.whenReady().then(() => {
   createWindow();
+  const mainWindow = BrowserWindow.getAllWindows()[0];
+  mainWindow.removeMenu();
 
   session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     callback({
